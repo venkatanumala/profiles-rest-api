@@ -59,4 +59,4 @@ class HelloViewSet(viewsets.ViewSet):
             'Automatically maps to urls using Routers',
             'Provide more  functionality with less code',
             ]
-        return Response({'message':'Hello','a_viewset':a_Viewset})
+        return Response({'message':'Hello','a_viewset':a_viewset})
