@@ -4,6 +4,7 @@ from rest_framework import status
 from rest_framework import viewsets
 from profiles_api import serializers
 
+from profiles_api import models
 
 # Create your views here.
 """ Test APi View"""
@@ -93,3 +94,10 @@ class HelloViewSet(viewsets.ViewSet):
     def destroy(self,request,pk=None):
         """ Destroying an object"""
         return Response({'http_method':'DELETE'})
+
+
+class UserProfileViewSet(viewsets.ModelViewSet):
+    """Handle creating anf updating profiles"""
+    serializer_class=serializers.UserProfileSerializer
+    queryset=models.UserProfile.objects.all()
+    
